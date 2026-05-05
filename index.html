@@ -522,7 +522,7 @@ input:focus, select:focus, textarea:focus {
   background: white;
 }
 input::placeholder { color: #b0bec5; }
-select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23006699' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+select { cursor: pointer; appearance: none; background-image: url("image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23006699' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
 textarea { resize: vertical; }
 .radio-group { display: flex; gap: 10px; }
 .radio-opt { flex: 1; position: relative; }
@@ -714,7 +714,6 @@ footer {
     <span class="ticker-item">Zero Prior Experience Required</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Proteus & KiCad</span><span class="ticker-sep">·</span>
     <span class="ticker-item">AC → DC Challenge · May 18</span><span class="ticker-sep">·</span>
-    <!-- duplicate for seamless loop -->
     <span class="ticker-item">Circuit Simulation Bootcamp</span><span class="ticker-sep">·</span>
     <span class="ticker-item">May 11 – 16, 2026</span><span class="ticker-sep">·</span>
     <span class="ticker-item">SEEES UNIBEN</span><span class="ticker-sep">·</span>
@@ -744,7 +743,6 @@ footer {
 
 <!-- MENU PANEL -->
 <div class="menu-panel" id="menuPanel">
-  <!-- PCB decoration inside panel -->
   <svg class="menu-pcb" viewBox="0 0 340 220" fill="none">
     <path d="M0 110 H80 V60 H180 V160 H280 V110 H340" stroke="#006699" stroke-width="2"/>
     <circle cx="80"  cy="110" r="6" fill="#006699"/>
@@ -785,7 +783,6 @@ footer {
 
   <!-- HERO -->
   <section class="hero">
-    <!-- Animated PCB trace decoration (right side) -->
     <svg class="hero-pcb" viewBox="0 0 480 500" fill="none" preserveAspectRatio="xMaxYMid slice">
       <path d="M480 40 H360 V100 H220 V40 H100 V160 H280 V240 H380 V320 H260 V400 H420 V460 H320" stroke="#006699" stroke-width="2"/>
       <circle cx="360" cy="40"  r="7" fill="#006699"/>
@@ -794,23 +791,19 @@ footer {
       <circle cx="280" cy="240" r="7" fill="#006699"/>
       <circle cx="380" cy="320" r="4" fill="none" stroke="#006699" stroke-width="1.5"/>
       <circle cx="260" cy="400" r="7" fill="#006699"/>
-      <!-- IC chip body -->
       <rect x="120" y="130" width="70" height="44" rx="4" stroke="#006699" stroke-width="1.5"/>
       <line x1="120" y1="141" x2="100" y2="141" stroke="#006699" stroke-width="1.5"/>
       <line x1="120" y1="152" x2="100" y2="152" stroke="#006699" stroke-width="1.5"/>
       <line x1="120" y1="163" x2="100" y2="163" stroke="#006699" stroke-width="1.5"/>
       <line x1="190" y1="141" x2="210" y2="141" stroke="#006699" stroke-width="1.5"/>
       <line x1="190" y1="152" x2="210" y2="152" stroke="#006699" stroke-width="1.5"/>
-      <!-- Resistor -->
       <rect x="290" y="296" width="32" height="16" rx="3" stroke="#006699" stroke-width="1.5"/>
       <line x1="278" y1="304" x2="290" y2="304" stroke="#006699" stroke-width="1.5"/>
       <line x1="322" y1="304" x2="334" y2="304" stroke="#006699" stroke-width="1.5"/>
-      <!-- Capacitor -->
       <line x1="430" y1="370" x2="430" y2="354" stroke="#006699" stroke-width="2"/>
       <line x1="420" y1="354" x2="440" y2="354" stroke="#006699" stroke-width="2"/>
       <line x1="420" y1="348" x2="440" y2="348" stroke="#006699" stroke-width="2"/>
       <line x1="430" y1="348" x2="430" y2="332" stroke="#006699" stroke-width="2"/>
-      <!-- Traveling signal -->
       <path class="trace-travel" d="M480 200 H380 V280 H200 V360 H80" stroke="#006699" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
     </svg>
 
@@ -962,7 +955,7 @@ footer {
     </div>
   </section>
 
-</div><!-- /page-home -->
+</div>
 
 
 <!-- ════════════════════════════════════════════════
@@ -976,7 +969,6 @@ footer {
       <p>Fill in the form below. You'll receive a confirmation email within 24 hours. The bootcamp is free and open to all EEE students at UNIBEN.</p>
     </div>
 
-    <!-- FORM CARD -->
     <div class="form-card" id="regFormCard">
       <form id="regForm" novalidate>
         <div class="form-row">
@@ -1063,7 +1055,6 @@ footer {
       </form>
     </div>
 
-    <!-- SUCCESS -->
     <div class="success-state" id="regSuccess">
       <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h3>You're registered.</h3>
@@ -1071,7 +1062,7 @@ footer {
       <button class="btn-outline" onclick="navTo('home')">← Back to Home</button>
     </div>
   </div>
-</div><!-- /page-register -->
+</div>
 
 
 <!-- ════════════════════════════════════════════════
@@ -1085,7 +1076,6 @@ footer {
       <p>The Circuit Simulation Bootcamp is a SEEES UNIBEN initiative to give every EEE student the tools to compete. We're grateful to the organizations making it possible — and the door is open for more.</p>
     </div>
 
-    <!-- CURRENT PARTNERS -->
     <div class="sp-sub-title">Current Partners</div>
     <div class="partners-grid">
       <div class="partner-card anim-in">
@@ -1098,7 +1088,7 @@ footer {
         <div class="partner-name">Alix</div>
         <div class="partner-type">_</div>
       </div>
-      <div class="partner-slot">
+      <div class="partner-slot" onclick="scrollToCollabForm()" style="cursor:pointer" title="Click to become a partner">
         <div class="slot-plus">
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </div>
@@ -1107,7 +1097,6 @@ footer {
       </div>
     </div>
 
-    <!-- WHY PARTNER -->
     <div class="why-card">
       <svg class="why-card-pcb" viewBox="0 0 960 200" fill="none" preserveAspectRatio="xMidYMid slice">
         <path d="M0 80 H200 V30 H540 V170 H760 V80 H960" stroke="white" stroke-width="2"/>
@@ -1142,7 +1131,6 @@ footer {
       </div>
     </div>
 
-    <!-- COLLABORATION FORM -->
     <div class="collab-intro">
       <h3>Become a Partner</h3>
       <p>Interested in sponsoring, collaborating, or contributing in any form? Send us a note and we'll respond within 48 hours.</p>
@@ -1194,7 +1182,6 @@ footer {
       </form>
     </div>
 
-    <!-- SUCCESS -->
     <div class="success-state" id="collabSuccess">
       <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h3>Proposal received.</h3>
@@ -1202,7 +1189,7 @@ footer {
       <button class="btn-outline" onclick="navTo('home')" style="margin-top:8px">← Back to Home</button>
     </div>
   </div>
-</div><!-- /page-sponsors -->
+</div>
 
 
 <!-- FOOTER -->
@@ -1255,41 +1242,15 @@ footer {
   </div>
 </footer>
 
-
 <!-- ════════════════════════════════════════════════
-     GOOGLE APPS SCRIPT (deploy → paste URL below)
-     ─────────────────────────────────────────────
-     function doPost(e) {
-       const data = JSON.parse(e.postData.contents);
-       const ss = SpreadsheetApp.getActiveSpreadsheet();
-
-       if (data.type === 'registration') {
-         const sh = ss.getSheetByName('Registrations') || ss.insertSheet('Registrations');
-         if (sh.getLastRow() === 0)
-           sh.appendRow(['Timestamp','Name','Email','Phone','Dept','Level','Used Proteus','Has Laptop']);
-         sh.appendRow([new Date(), data.fullName, data.email, data.phone,
-                       data.dept, data.level, data.usedProteus, data.hasLaptop]);
-       }
-
-       if (data.type === 'collaboration') {
-         const sh = ss.getSheetByName('Collaborations') || ss.insertSheet('Collaborations');
-         if (sh.getLastRow() === 0)
-           sh.appendRow(['Timestamp','Org','Contact','Email','Phone','Type','Message']);
-         sh.appendRow([new Date(), data.orgName, data.contactPerson, data.collabEmail,
-                       data.collabPhone, data.collabType, data.collabMsg]);
-       }
-
-       return ContentService
-         .createTextOutput(JSON.stringify({ ok: true }))
-         .setMimeType(ContentService.MimeType.JSON);
-     }
+     COMPLETE JAVASCRIPT
 ════════════════════════════════════════════════ -->
-
 <script>
-/* ─── CONFIG ─────────────────────────────────── */
-const SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+/* ─── CONFIG: DEPLOYED ENDPOINTS ─────────────────────────── */
+const REGISTRATION_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwbw0h1guQkkOhqs1rD534YlUgVRvw7spqf4sIE7p5YlLkYtdgH3Qvi7YRHEn4PRKh7WQ/exec';
+const COLLABORATION_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHuJNcY8XSQTTYS6k8F0JTLBSw4JtqXqxLUhfqGsXonrGOv1RLZ4nDCBWw4K2Il4w/exec';
 
-/* ─── PAGE ROUTING ───────────────────────────── */
+/* ─── PAGE ROUTING ───────────────────────────────────────── */
 function navTo(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
@@ -1298,11 +1259,10 @@ function navTo(id) {
   document.querySelectorAll('.menu-nav a').forEach(a => a.classList.remove('active-link'));
   const lnk = document.getElementById('link-' + id);
   if (lnk) lnk.classList.add('active-link');
-  // Re-trigger entrance animations
   setTimeout(runAnimations, 100);
 }
 
-/* ─── MENU ───────────────────────────────────── */
+/* ─── MENU TOGGLE ────────────────────────────────────────── */
 function toggleMenu() {
   const b  = document.getElementById('hamburger');
   const p  = document.getElementById('menuPanel');
@@ -1319,9 +1279,23 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 
-/* ─── COUNTDOWN ──────────────────────────────── */
+/* ─── SCROLL TO COLLAB FORM ──────────────────────────────── */
+function scrollToCollabForm() {
+  navTo('sponsors');
+  setTimeout(() => {
+    const form = document.getElementById('collabFormCard');
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      form.style.transition = 'box-shadow 0.3s';
+      form.style.boxShadow = '0 0 0 3px rgba(0,102,153,0.3)';
+      setTimeout(() => form.style.boxShadow = '', 2000);
+    }
+  }, 300);
+}
+
+/* ─── COUNTDOWN TIMER ────────────────────────────────────── */
 const TARGET = new Date('2026-05-11T00:00:00');
-const prev   = { d: -1, h: -1, m: -1, s: -1 };
+const prev = { d: -1, h: -1, m: -1, s: -1 };
 
 function tick() {
   const diff = TARGET - Date.now();
@@ -1349,82 +1323,105 @@ function tick() {
   }
   set('cd-days', d, 'd');
   set('cd-hours', h, 'h');
-  set('cd-mins',  m, 'm');
-  set('cd-secs',  s, 's');
+  set('cd-mins', m, 'm');
+  set('cd-secs', s, 's');
 }
 tick();
 setInterval(tick, 1000);
 
-/* ─── FORM: REGISTRATION ─────────────────────── */
-document.getElementById('regForm').addEventListener('submit', async (e) => {
+/* ─── FORM: REGISTRATION SUBMISSION ──────────────────────── */
+document.getElementById('regForm')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = document.getElementById('regSubmitBtn');
-  btn.textContent = 'Submitting…'; btn.disabled = true;
+  const originalText = btn.innerHTML;
+  btn.innerHTML = 'Submitting…'; btn.disabled = true;
 
   const f = e.target;
+  
+  if (!f.fullName.value.trim() || !f.email.value.trim() || !f.phone.value.trim()) {
+    alert('Please fill in all required fields.');
+    btn.innerHTML = originalText; btn.disabled = false;
+    return;
+  }
+  
   const data = {
     type: 'registration',
-    fullName: f.fullName.value,
-    email:    f.email.value,
-    phone:    f.phone.value,
-    dept:     f.dept.value,
-    level:    f.level.value,
-    usedProteus: f.usedProteus.value,
-    hasLaptop:   f.hasLaptop.value,
+    fullName: f.fullName.value.trim(),
+    email: f.email.value.trim(),
+    phone: f.phone.value.trim(),
+    dept: f.dept.value,
+    level: f.level.value,
+    usedProteus: document.querySelector('input[name="usedProteus"]:checked')?.value || '',
+    hasLaptop: document.querySelector('input[name="hasLaptop"]:checked')?.value || '',
   };
 
   try {
-    await fetch(SCRIPT_URL, {
+    await fetch(REGISTRATION_SCRIPT_URL, {
       method: 'POST', mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
+    await new Promise(res => setTimeout(res, 800));
     document.getElementById('regFormCard').style.display = 'none';
     document.getElementById('regSuccess').style.display = 'block';
-  } catch {
-    btn.textContent = 'Submit Registration'; btn.disabled = false;
-    alert('Something went wrong. Please try again.');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (err) {
+    console.error('Registration error:', err);
+    btn.innerHTML = originalText; btn.disabled = false;
+    alert('Something went wrong. Please check your connection and try again.');
   }
 });
 
-/* ─── FORM: COLLABORATION ────────────────────── */
-document.getElementById('collabForm').addEventListener('submit', async (e) => {
+/* ─── FORM: COLLABORATION SUBMISSION ─────────────────────── */
+document.getElementById('collabForm')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = document.getElementById('collabSubmitBtn');
-  btn.textContent = 'Sending…'; btn.disabled = true;
+  const originalText = btn.innerHTML;
+  btn.innerHTML = 'Sending…'; btn.disabled = true;
 
   const f = e.target;
+  
+  if (!f.orgName.value.trim() || !f.contactPerson.value.trim() || !f.collabEmail.value.trim()) {
+    alert('Please fill in all required fields.');
+    btn.innerHTML = originalText; btn.disabled = false;
+    return;
+  }
+  
   const data = {
     type: 'collaboration',
-    orgName:       f.orgName.value,
-    contactPerson: f.contactPerson.value,
-    collabEmail:   f.collabEmail.value,
-    collabPhone:   f.collabPhone.value,
-    collabType:    f.collabType.value,
-    collabMsg:     f.collabMsg.value,
+    orgName: f.orgName.value.trim(),
+    contactPerson: f.contactPerson.value.trim(),
+    collabEmail: f.collabEmail.value.trim(),
+    collabPhone: f.collabPhone.value.trim(),
+    collabType: f.collabType.value,
+    collabMsg: f.collabMsg.value.trim(),
   };
 
   try {
-    await fetch(SCRIPT_URL, {
+    await fetch(COLLABORATION_SCRIPT_URL, {
       method: 'POST', mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
+    await new Promise(res => setTimeout(res, 800));
     document.getElementById('collabFormCard').style.display = 'none';
     document.getElementById('collabSuccess').style.display = 'block';
-  } catch {
-    btn.textContent = 'Send Proposal'; btn.disabled = false;
-    alert('Something went wrong. Please try again.');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (err) {
+    console.error('Collaboration error:', err);
+    btn.innerHTML = originalText; btn.disabled = false;
+    alert('Something went wrong. Please check your connection and try again.');
   }
 });
 
-/* ─── ENTRANCE ANIMATIONS ────────────────────── */
+/* ─── ENTRANCE ANIMATIONS ────────────────────────────────── */
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((en, i) => {
+  entries.forEach((en) => {
     if (en.isIntersecting) {
+      const delay = parseInt(en.target.dataset.delay) || 0;
       setTimeout(() => {
         en.target.classList.add('visible');
-      }, en.target.dataset.delay || 0);
+      }, delay);
       observer.unobserve(en.target);
     }
   });
@@ -1436,11 +1433,30 @@ function runAnimations() {
     observer.observe(el);
   });
 }
-runAnimations();
 
-/* ─── KEYBOARD NAV SUPPORT ───────────────────── */
-document.querySelector('.nav-brand').addEventListener('keydown', e => {
-  if (e.key === 'Enter') navTo('home');
+document.addEventListener('DOMContentLoaded', () => {
+  runAnimations();
+  
+  const partnerSlot = document.querySelector('.partner-slot');
+  if (partnerSlot) {
+    partnerSlot.style.cursor = 'pointer';
+    partnerSlot.onclick = scrollToCollabForm;
+    partnerSlot.title = 'Click to become a partner';
+  }
+});
+
+const originalNavTo = navTo;
+navTo = function(id) {
+  originalNavTo(id);
+  setTimeout(runAnimations, 150);
+};
+
+/* ─── KEYBOARD ACCESSIBILITY ─────────────────────────────── */
+document.querySelector('.nav-brand')?.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    navTo('home');
+  }
 });
 </script>
 </body>
