@@ -216,7 +216,6 @@ nav.topnav {
   letter-spacing: 0.14em; text-transform: uppercase;
   line-height: 1.8;
 }
-/* PCB deco inside menu */
 .menu-pcb {
   position: absolute; bottom: 70px; left: 0; right: 0;
   opacity: 0.055; pointer-events: none;
@@ -370,8 +369,44 @@ nav.topnav {
 }
 .cd-footer strong { color: rgba(255,255,255,0.82); font-weight: 500; }
 
+/* In-progress state for countdown */
+.cd-in-progress {
+  text-align: center;
+  padding: 32px 24px;
+  color: white;
+}
+.cd-in-progress .status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.cd-in-progress .status-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 1.2s ease infinite;
+}
+.cd-in-progress h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: clamp(24px, 4vw, 36px);
+  margin-bottom: 8px;
+}
+.cd-in-progress p {
+  font-size: 14px;
+  opacity: 0.85;
+  font-weight: 300;
+}
+
 /* ──────────────────────────────────────────────────
-   STAGES (dignified milestone cards)
+   STAGES
 ────────────────────────────────────────────────── */
 .stages-section { padding: 56px 0; }
 .stages-row {
@@ -393,7 +428,6 @@ nav.topnav {
   box-shadow: 0 0 0 4px rgba(0,102,153,0.1);
 }
 .stage-card.is-goal:hover { box-shadow: 0 0 0 4px rgba(0,102,153,0.1), var(--shadow-up); }
-/* Corner via dot */
 .stage-card::after {
   content: ''; position: absolute; top: 14px; right: 14px;
   width: 9px; height: 9px; border-radius: 50%;
@@ -420,7 +454,6 @@ nav.topnav {
 .stage-name { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
 .stage-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
 
-/* Connector between stage cards */
 .stage-connector {
   display: flex; flex-direction: column; align-items: center; gap: 5px;
 }
@@ -540,6 +573,54 @@ textarea { resize: vertical; }
 .form-foot { margin-top: 28px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .form-note { font-size: 12px; color: var(--muted); font-weight: 300; }
 
+/* "Other" department field */
+#otherDeptContainer {
+  margin-top: 12px;
+  animation: slideIn 0.25s ease;
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* WhatsApp reminder box */
+.whatsapp-reminder {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  border-radius: var(--r);
+  padding: 20px 24px;
+  margin: 24px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  color: white;
+}
+.whatsapp-reminder svg {
+  width: 28px; height: 28px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.whatsapp-reminder-content h4 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.whatsapp-reminder-content p {
+  font-size: 14px;
+  opacity: 0.95;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.whatsapp-reminder-content a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255,255,255,0.7);
+}
+.whatsapp-reminder-content a:hover {
+  border-bottom-color: white;
+}
+
 /* ──────────────────────────────────────────────────
    SUCCESS STATE
 ────────────────────────────────────────────────── */
@@ -573,9 +654,46 @@ textarea { resize: vertical; }
   transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 .partner-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-up); border-color: var(--blue-light); }
-.partner-logo { height: 64px; width: auto; max-width: 150px; object-fit: contain; }
+.partner-logo { 
+  height: 64px; width: auto; max-width: 150px; object-fit: contain; 
+  border-radius: 8px; padding: 4px; background: var(--bg);
+}
 .partner-name { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 15px; color: var(--text); text-align: center; }
 .partner-type { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.14em; color: var(--blue); text-transform: uppercase; }
+.partner-desc {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+/* Mentor card variation */
+.partner-card.mentor-card {
+  text-align: center;
+}
+.partner-card.mentor-card .partner-logo {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--blue-light);
+  padding: 0;
+  background: none;
+}
+.partner-card.mentor-card .partner-name {
+  font-size: 16px;
+}
+.partner-card.mentor-card .partner-role {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
 .partner-slot {
   border: 1.5px dashed var(--border); border-radius: var(--r);
   padding: 32px 24px; display: flex; flex-direction: column;
@@ -690,7 +808,7 @@ footer {
   .conn-label { writing-mode: horizontal-tb; }
   .learn-grid { grid-template-columns: 1fr; }
   .details-grid { grid-template-columns: 1fr 1fr; }
-  .partners-grid { grid-template-columns: 1fr 1fr; }
+  .partners-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 28px; }
   .cd-grid { grid-template-columns: repeat(2,1fr); }
@@ -709,13 +827,13 @@ footer {
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
     <span class="ticker-item">Circuit Simulation Bootcamp</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">May 11 – 16, 2026</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">May 11 – 14, 2026</span><span class="ticker-sep">·</span>
     <span class="ticker-item">SEEES UNIBEN</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Zero Prior Experience Required</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Proteus & KiCad</span><span class="ticker-sep">·</span>
     <span class="ticker-item">AC → DC Challenge · May 18</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Circuit Simulation Bootcamp</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">May 11 – 16, 2026</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">May 11 – 14, 2026</span><span class="ticker-sep">·</span>
     <span class="ticker-item">SEEES UNIBEN</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Zero Prior Experience Required</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Proteus & KiCad</span><span class="ticker-sep">·</span>
@@ -771,7 +889,7 @@ footer {
     </a>
   </div>
   <div class="menu-foot">
-    <p>Circuit Simulation Bootcamp<br>May 11–16, 2026 · SEEES UNIBEN</p>
+    <p>Circuit Simulation Bootcamp<br>May 11–14, 2026 · SEEES UNIBEN</p>
   </div>
 </div>
 
@@ -813,7 +931,7 @@ footer {
         SEEES UNIBEN · Workshop Series
       </div>
       <h1>Circuit<br><span class="hi">Simulation</span><br>Bootcamp</h1>
-      <p class="hero-sub">Zero prior experience required. Six days to build the exact skills — and the exact circuits — you need for the Challenge.</p>
+      <p class="hero-sub">Zero prior experience required. Four intensive days to build the exact skills — and the exact circuits — you need for the Challenge.</p>
       <div class="hero-cta">
         <button class="btn-primary" onclick="navTo('register')">
           Register Now
@@ -837,14 +955,29 @@ footer {
           <path d="M200 130 H320 V60 H520 V130" stroke="white" stroke-width="1.5" stroke-dasharray="8 5"/>
           <rect x="350" y="40" width="50" height="36" rx="4" stroke="white" stroke-width="1.5"/>
         </svg>
-        <div class="cd-label">// bootcamp begins in</div>
-        <div class="cd-grid">
-          <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-unit-label">Days</span></div>
-          <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-unit-label">Hours</span></div>
-          <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-unit-label">Minutes</span></div>
-          <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-unit-label">Seconds</span></div>
+        
+        <!-- Countdown Timer View -->
+        <div id="countdownView">
+          <div class="cd-label">// bootcamp begins in</div>
+          <div class="cd-grid">
+            <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-unit-label">Days</span></div>
+            <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-unit-label">Hours</span></div>
+            <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-unit-label">Minutes</span></div>
+            <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-unit-label">Seconds</span></div>
+          </div>
+          <p class="cd-footer">Until <strong>Circuit Simulation Bootcamp · May 13, 2026 at 1:00 PM</strong></p>
         </div>
-        <p class="cd-footer">Until <strong>Circuit Simulation Bootcamp · May 11, 2026</strong></p>
+        
+        <!-- In-Progress View (shown when countdown ends) -->
+        <div id="inProgressView" class="cd-in-progress" style="display:none">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            Live Now
+          </div>
+          <h3>🔌 Circuit Simulation in Progress</h3>
+          <p>The bootcamp is currently running. Check your email and WhatsApp for session links and updates.</p>
+        </div>
+        
       </div>
     </div>
   </section>
@@ -871,8 +1004,8 @@ footer {
             </svg>
           </div>
           <div class="stage-name">The Bootcamp</div>
-          <div class="stage-date">May 11 – 16</div>
-          <p class="stage-desc">Six intensive days in Proteus & KiCad. Analog circuit intuition. The exact modules you need — built session by session.</p>
+          <div class="stage-date">May 11 – 14</div>
+          <p class="stage-desc">Four intensive days in Proteus & KiCad. Analog circuit intuition. The exact modules you need — built session by session.</p>
         </div>
 
         <!-- CONNECTOR -->
@@ -948,7 +1081,7 @@ footer {
       </div>
       <div class="details-grid">
         <div class="d-cell anim-in"><div class="d-key">Open To</div><div class="d-val">All EEE Students</div></div>
-        <div class="d-cell anim-in"><div class="d-key">Bootcamp Dates</div><div class="d-val">May 11 – 16, 2026</div></div>
+        <div class="d-cell anim-in"><div class="d-key">Bootcamp Dates</div><div class="d-val">May 11 – 14, 2026</div></div>
         <div class="d-cell anim-in"><div class="d-key">Experience Required</div><div class="d-val">None. Zero.</div></div>
         <div class="d-cell anim-in"><div class="d-key">The Challenge</div><div class="d-val">May 18, 2026</div></div>
       </div>
@@ -988,12 +1121,17 @@ footer {
         <div class="form-2col">
           <div>
             <label for="dept">Department <span class="req">*</span></label>
-            <select id="dept" name="dept" required>
+            <select id="dept" name="dept" required onchange="toggleOtherDept()">
               <option value="" disabled selected>Select department</option>
-              <option>Electrical Engineering</option>
-              <option>Electronic & Computer Engineering</option>
               <option>Electrical/Electronics Engineering</option>
+              <option>Computer Engineering</option>
+              <option>Mechatronics Engineering</option>
+              <option>Production Engineering</option>
+              <option value="other">Other: Please specify</option>
             </select>
+            <div id="otherDeptContainer" style="display:none">
+              <input type="text" id="otherDept" name="otherDept" placeholder="Please specify your department" style="margin-top:8px">
+            </div>
           </div>
           <div>
             <label for="level">Level <span class="req">*</span></label>
@@ -1059,6 +1197,18 @@ footer {
       <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h3>You're registered.</h3>
       <p>Watch your email for confirmation within 24 hours. We'll see you on May 11th.</p>
+      
+      <!-- WhatsApp Reminder Box -->
+      <div class="whatsapp-reminder">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <div class="whatsapp-reminder-content">
+          <h4>📱 Join Our WhatsApp Group</h4>
+          <p>After submitting, <a href="https://chat.whatsapp.com/EX08Q4hhppaBlqigEVgRAO?mode=gi_t" target="_blank">click here to join the official bootcamp WhatsApp group</a> for real-time updates, session links, and peer support.</p>
+        </div>
+      </div>
+      
       <button class="btn-outline" onclick="navTo('home')">← Back to Home</button>
     </div>
   </div>
@@ -1076,25 +1226,33 @@ footer {
       <p>The Circuit Simulation Bootcamp is a SEEES UNIBEN initiative to give every EEE student the tools to compete. We're grateful to the organizations making it possible — and the door is open for more.</p>
     </div>
 
-    <div class="sp-sub-title">Current Partners</div>
+    <div class="sp-sub-title">Our Partners & Mentors</div>
     <div class="partners-grid">
+      
+      <!-- Alix -->
       <div class="partner-card anim-in">
-        <img src="https://res.cloudinary.com/dc2gwj09q/image/upload/v1774393133/file_00000000f4b871f4bf0aab23ea93084a-removebg-preview_badboh.png" alt="Synthova Oil" class="partner-logo">
-        <div class="partner-name">Synthova Oil</div>
-        <div class="partner-type">_</div>
-      </div>
-      <div class="partner-card anim-in">
-        <img src="https://res.cloudinary.com/dc2gwj09q/image/upload/v1774903253/Alix_Logo-removebg-preview_aykhme.png" alt="Alix" class="partner-logo">
+        <img src="https://res.cloudinary.com/dc2gwj09q/image/upload/v1778513133/1003457654_8aebeb782fe656adb4823520bac05270-3_31_2026_8_50_02_AM_20260510_234315_0000_z29b3g.png" alt="Alix" class="partner-logo">
         <div class="partner-name">Alix</div>
-        <div class="partner-type">_</div>
+        <div class="partner-type">Engineering Marketplace</div>
+        <p class="partner-desc">Nigeria's Engineering Marketplace — connecting students and professionals with tools, resources, and opportunities built for the African engineering ecosystem. Through Alix Learn, it offers free, project-based programming education designed to take engineers from zero to deployable skills, no paywalls attached.</p>
       </div>
-      <div class="partner-slot" onclick="scrollToCollabForm()" style="cursor:pointer" title="Click to become a partner">
-        <div class="slot-plus">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </div>
-        <div class="slot-label">Your Brand Here</div>
-        <div class="slot-sub">Open Slot</div>
+      
+      <!-- IEEE UNIBEN -->
+      <div class="partner-card anim-in">
+        <img src="https://res.cloudinary.com/dc2gwj09q/image/upload/v1775459267/images__1_-removebg-preview_b40apw.png" alt="IEEE University of Benin Student Branch" class="partner-logo">
+        <div class="partner-name">IEEE University of Benin Student Branch</div>
+        <div class="partner-type">Organizing Body</div>
+        <p class="partner-desc">The official student chapter of the Institute of Electrical and Electronics Engineers at UNIBEN. As part of the world's largest technical professional organization, the branch bridges academic learning and real-world engineering practice — hosting technical workshops, industry-facing events, and hands-on projects that sharpen the professional edge of engineering students across campus.</p>
       </div>
+      
+      <!-- Joseph Obuna - PCB Mentor -->
+      <div class="partner-card mentor-card anim-in">
+        <img src="https://res.cloudinary.com/dc2gwj09q/image/upload/v1778513128/SAVE_20260511_162208_kjbh6k.jpg" alt="Joseph Obuna" class="partner-logo">
+        <div class="partner-name">Joseph Obuna</div>
+        <div class="partner-role">PCB Mentor</div>
+        <p class="partner-desc">CEO of PCB Mentor, a platform empowering African engineers to master industry-standard PCB design and professional Design for Manufacturing (DFM) workflows. Through high-impact initiatives like global bootcamps, his brand bridges the gap between theoretical electronics and the practical ability to route and build physical, manufacturable hardware products.</p>
+      </div>
+      
     </div>
 
     <div class="why-card">
@@ -1228,7 +1386,7 @@ footer {
       <div class="footer-col">
         <h4>Event</h4>
         <nav>
-          <a>Bootcamp: May 11 – 16, 2026</a>
+          <a>Bootcamp: May 11 – 14, 2026</a>
           <a>The Challenge: May 18, 2026</a>
           <a>University of Benin, Benin City</a>
           <a>[ socials placeholder ]</a>
@@ -1293,18 +1451,42 @@ function scrollToCollabForm() {
   }, 300);
 }
 
+/* ─── TOGGLE "OTHER" DEPARTMENT FIELD ───────────────────── */
+function toggleOtherDept() {
+  const deptSelect = document.getElementById('dept');
+  const otherContainer = document.getElementById('otherDeptContainer');
+  const otherInput = document.getElementById('otherDept');
+  
+  if (deptSelect.value === 'other') {
+    otherContainer.style.display = 'block';
+    otherInput.required = true;
+    otherInput.focus();
+  } else {
+    otherContainer.style.display = 'none';
+    otherInput.required = false;
+    otherInput.value = '';
+  }
+}
+
 /* ─── COUNTDOWN TIMER ────────────────────────────────────── */
-const TARGET = new Date('2026-05-11T00:00:00');
+// Target: May 13, 2026 at 1:00 PM (local time interpretation)
+const TARGET = new Date('2026-05-13T13:00:00');
 const prev = { d: -1, h: -1, m: -1, s: -1 };
+let countdownEnded = false;
 
 function tick() {
   const diff = TARGET - Date.now();
-  if (diff <= 0) {
-    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
-      document.getElementById(id).textContent = '00';
-    });
+  
+  // If countdown has ended, show in-progress message
+  if (diff <= 0 && !countdownEnded) {
+    countdownEnded = true;
+    document.getElementById('countdownView').style.display = 'none';
+    document.getElementById('inProgressView').style.display = 'block';
     return;
   }
+  
+  if (diff <= 0) return; // Already ended
+  
   const d = Math.floor(diff / 86400000);
   const h = Math.floor((diff % 86400000) / 3600000);
   const m = Math.floor((diff % 3600000) / 60000);
@@ -1338,7 +1520,10 @@ document.getElementById('regForm')?.addEventListener('submit', async (e) => {
 
   const f = e.target;
   
-  if (!f.fullName.value.trim() || !f.email.value.trim() || !f.phone.value.trim()) {
+  // Handle "Other" department
+  const deptValue = f.dept.value === 'other' ? f.otherDept.value.trim() : f.dept.value;
+  
+  if (!f.fullName.value.trim() || !f.email.value.trim() || !f.phone.value.trim() || !deptValue) {
     alert('Please fill in all required fields.');
     btn.innerHTML = originalText; btn.disabled = false;
     return;
@@ -1349,7 +1534,7 @@ document.getElementById('regForm')?.addEventListener('submit', async (e) => {
     fullName: f.fullName.value.trim(),
     email: f.email.value.trim(),
     phone: f.phone.value.trim(),
-    dept: f.dept.value,
+    dept: deptValue,
     level: f.level.value,
     usedProteus: document.querySelector('input[name="usedProteus"]:checked')?.value || '',
     hasLaptop: document.querySelector('input[name="hasLaptop"]:checked')?.value || '',
@@ -1443,6 +1628,9 @@ document.addEventListener('DOMContentLoaded', () => {
     partnerSlot.onclick = scrollToCollabForm;
     partnerSlot.title = 'Click to become a partner';
   }
+  
+  // Initialize department toggle
+  toggleOtherDept();
 });
 
 const originalNavTo = navTo;
