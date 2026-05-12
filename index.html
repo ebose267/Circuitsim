@@ -668,6 +668,30 @@ textarea { resize: vertical; }
   margin-top: 8px;
   font-weight: 300;
 }
+.partner-desc a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+.partner-desc a:hover {
+  text-decoration: underline;
+}
+
+/* Dual logo layout for IEEE card */
+.dual-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.dual-logos img {
+  height: 56px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+}
 
 /* Mentor card variation */
 .partner-card.mentor-card {
@@ -762,6 +786,28 @@ footer {
   transition: color 0.15s;
 }
 .footer-col nav a:hover { color: white; }
+
+/* Social links in footer */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.58);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-social a:hover { color: white; }
+.footer-social svg {
+  width: 16px;
+  height: 16px;
+}
+
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.1);
   padding-top: 24px; display: flex; align-items: center;
@@ -813,11 +859,14 @@ footer {
   .footer-top { grid-template-columns: 1fr; gap: 28px; }
   .cd-grid { grid-template-columns: repeat(2,1fr); }
   .form-2col { grid-template-columns: 1fr; }
+  .dual-logos { gap: 12px; }
+  .dual-logos img { height: 48px; }
 }
 @media (max-width: 460px) {
   .details-grid { grid-template-columns: 1fr; }
   .partners-grid { grid-template-columns: 1fr; }
   .hero h1 { font-size: 38px; }
+  .dual-logos { flex-direction: column; gap: 8px; }
 }
 </style>
 </head>
@@ -827,17 +876,17 @@ footer {
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
     <span class="ticker-item">Circuit Simulation Bootcamp</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">May 11 – 14, 2026</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">May 13 – 19, 2026</span><span class="ticker-sep">·</span>
     <span class="ticker-item">SEEES UNIBEN</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Zero Prior Experience Required</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Proteus & KiCad</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">AC → DC Challenge · May 18</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">AC → DC Challenge · May 23</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Circuit Simulation Bootcamp</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">May 11 – 14, 2026</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">May 13 – 19, 2026</span><span class="ticker-sep">·</span>
     <span class="ticker-item">SEEES UNIBEN</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Zero Prior Experience Required</span><span class="ticker-sep">·</span>
     <span class="ticker-item">Proteus & KiCad</span><span class="ticker-sep">·</span>
-    <span class="ticker-item">AC → DC Challenge · May 18</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">AC → DC Challenge · May 23</span><span class="ticker-sep">·</span>
   </div>
 </div>
 
@@ -889,7 +938,7 @@ footer {
     </a>
   </div>
   <div class="menu-foot">
-    <p>Circuit Simulation Bootcamp<br>May 11–14, 2026 · SEEES UNIBEN</p>
+    <p>Circuit Simulation Bootcamp<br>May 13–19, 2026 · SEEES UNIBEN</p>
   </div>
 </div>
 
@@ -931,7 +980,7 @@ footer {
         SEEES UNIBEN · Workshop Series
       </div>
       <h1>Circuit<br><span class="hi">Simulation</span><br>Bootcamp</h1>
-      <p class="hero-sub">Zero prior experience required. Four intensive days to build the exact skills — and the exact circuits — you need for the Challenge.</p>
+      <p class="hero-sub">Zero prior experience required. Seven intensive days to build the exact skills — and the exact circuits — you need for the Challenge.</p>
       <div class="hero-cta">
         <button class="btn-primary" onclick="navTo('register')">
           Register Now
@@ -1004,8 +1053,8 @@ footer {
             </svg>
           </div>
           <div class="stage-name">The Bootcamp</div>
-          <div class="stage-date">May 11 – 14</div>
-          <p class="stage-desc">Four intensive days in Proteus & KiCad. Analog circuit intuition. The exact modules you need — built session by session.</p>
+          <div class="stage-date">May 13 – 19</div>
+          <p class="stage-desc">Seven intensive days in Proteus & KiCad. Analog circuit intuition. The exact modules you need — built session by session.</p>
         </div>
 
         <!-- CONNECTOR -->
@@ -1026,7 +1075,7 @@ footer {
             </svg>
           </div>
           <div class="stage-name">The Challenge</div>
-          <div class="stage-date">May 18</div>
+          <div class="stage-date">May 23</div>
           <p class="stage-desc">The AC → DC Power Supply Challenge. Apply everything from the bootcamp in a real, assessed build.</p>
         </div>
 
@@ -1065,7 +1114,7 @@ footer {
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
           </div>
           <h3>Challenge-Ready Modules</h3>
-          <p>Every session builds directly toward May 18. You arrive at the Challenge with the build already in your hands.</p>
+          <p>Every session builds directly toward May 23. You arrive at the Challenge with the build already in your hands.</p>
         </div>
       </div>
     </div>
@@ -1081,9 +1130,9 @@ footer {
       </div>
       <div class="details-grid">
         <div class="d-cell anim-in"><div class="d-key">Open To</div><div class="d-val">All EEE Students</div></div>
-        <div class="d-cell anim-in"><div class="d-key">Bootcamp Dates</div><div class="d-val">May 11 – 14, 2026</div></div>
+        <div class="d-cell anim-in"><div class="d-key">Bootcamp Dates</div><div class="d-val">May 13 – 19, 2026</div></div>
         <div class="d-cell anim-in"><div class="d-key">Experience Required</div><div class="d-val">None. Zero.</div></div>
-        <div class="d-cell anim-in"><div class="d-key">The Challenge</div><div class="d-val">May 18, 2026</div></div>
+        <div class="d-cell anim-in"><div class="d-key">The Challenge</div><div class="d-val">May 23, 2026</div></div>
       </div>
     </div>
   </section>
@@ -1196,7 +1245,7 @@ footer {
     <div class="success-state" id="regSuccess">
       <div class="success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
       <h3>You're registered.</h3>
-      <p>Watch your email for confirmation within 24 hours. We'll see you on May 11th.</p>
+      <p>Watch your email for confirmation within 24 hours. We'll see you on May 13th.</p>
       
       <!-- WhatsApp Reminder Box -->
       <div class="whatsapp-reminder">
@@ -1234,12 +1283,15 @@ footer {
         <img src="https://res.cloudinary.com/dc2gwj09q/image/upload/v1778513133/1003457654_8aebeb782fe656adb4823520bac05270-3_31_2026_8_50_02_AM_20260510_234315_0000_z29b3g.png" alt="Alix" class="partner-logo">
         <div class="partner-name">Alix</div>
         <div class="partner-type">Engineering Marketplace</div>
-        <p class="partner-desc">Nigeria's Engineering Marketplace — connecting students and professionals with tools, resources, and opportunities built for the African engineering ecosystem. Through Alix Learn, it offers free, project-based programming education designed to take engineers from zero to deployable skills, no paywalls attached.</p>
+        <p class="partner-desc">Nigeria's Engineering Marketplace — connecting students and professionals with tools, resources, and opportunities built for the African engineering ecosystem. Through Alix Learn, it offers free, project-based programming education designed to take engineers from zero to deployable skills, no paywalls attached. <a href="https://learn.alixbc.com.ng" target="_blank">Start learning →</a></p>
       </div>
       
-      <!-- IEEE UNIBEN -->
+      <!-- IEEE UNIBEN with dual logos -->
       <div class="partner-card anim-in">
-        <img src="https://res.cloudinary.com/dc2gwj09q/image/upload/v1775459267/images__1_-removebg-preview_b40apw.png" alt="IEEE University of Benin Student Branch" class="partner-logo">
+        <div class="dual-logos">
+          <img src="https://res.cloudinary.com/dc2gwj09q/image/upload/v1775459267/images__1_-removebg-preview_b40apw.png" alt="IEEE University of Benin Student Branch" class="partner-logo">
+          <img src="https://res.cloudinary.com/dc2gwj09q/image/upload/v1778011515/SAVE_20260505_204802_k6z8ls.jpg" alt="Partner Organization" class="partner-logo">
+        </div>
         <div class="partner-name">IEEE University of Benin Student Branch</div>
         <div class="partner-type">Organizing Body</div>
         <p class="partner-desc">The official student chapter of the Institute of Electrical and Electronics Engineers at UNIBEN. As part of the world's largest technical professional organization, the branch bridges academic learning and real-world engineering practice — hosting technical workshops, industry-facing events, and hands-on projects that sharpen the professional edge of engineering students across campus.</p>
@@ -1250,7 +1302,7 @@ footer {
         <img src="https://res.cloudinary.com/dc2gwj09q/image/upload/v1778513128/SAVE_20260511_162208_kjbh6k.jpg" alt="Joseph Obuna" class="partner-logo">
         <div class="partner-name">Joseph Obuna</div>
         <div class="partner-role">PCB Mentor</div>
-        <p class="partner-desc">CEO of PCB Mentor, a platform empowering African engineers to master industry-standard PCB design and professional Design for Manufacturing (DFM) workflows. Through high-impact initiatives like global bootcamps, his brand bridges the gap between theoretical electronics and the practical ability to route and build physical, manufacturable hardware products.</p>
+        <p class="partner-desc">PCBMentor is an expert-led training platform dedicated to bridging the gap between academic theory and industry demands by equipping university students with the comprehensive, hands-on mentorship needed to design professional, manufacturable Electronics hardware.</p>
       </div>
       
     </div>
@@ -1374,6 +1426,17 @@ footer {
           <span class="footer-org">SEEES UNIBEN</span>
         </div>
         <p class="footer-tagline">Society of Electrical and Electronics Engineering Students, University of Benin.</p>
+        <!-- Social Media Handles -->
+        <div class="footer-social">
+          <a href="https://instagram.com/seees_uniben" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            @seees_uniben
+          </a>
+          <a href="https://linkedin.com/company/seees-uniben" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            @seees_uniben
+          </a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Navigate</h4>
@@ -1386,10 +1449,9 @@ footer {
       <div class="footer-col">
         <h4>Event</h4>
         <nav>
-          <a>Bootcamp: May 11 – 14, 2026</a>
-          <a>The Challenge: May 18, 2026</a>
+          <a>Bootcamp: May 13 – 19, 2026</a>
+          <a>The Challenge: May 23, 2026</a>
           <a>University of Benin, Benin City</a>
-          <a>[ socials placeholder ]</a>
         </nav>
       </div>
     </div>
